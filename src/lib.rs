@@ -1,37 +1,4 @@
-//! `#[derive(ToTokens)]`, calling [`quote::ToTokens`](https://docs.rs/quote/1.0.33/quote/trait.ToTokens.html#tymethod.to_tokens) on each field.
-//! Nothing more, nothing less.
-//!
-//! ```
-//! use derive_quote_to_tokens::ToTokens;
-//! use quote::{ToTokens, quote};
-//! use proc_macro2::Span;
-//! use syn::{Token, Ident};
-//!
-//! #[derive(ToTokens)]
-//! struct Tag {
-//!     lt: Token![<],
-//!     inner: Ident,
-//!     gt: Token![>],
-//! }
-//!
-//! let tag = /* snip */
-//! # Tag { lt: Token![<](Span::call_site()), inner: Ident::new("main", Span::call_site()), gt: Token![>](Span::call_site()) };
-//! assert_eq!(
-//!     tag.to_token_stream().to_string(),
-//!     quote! { <main> }.to_string(),
-//! );
-//! ```
-//!
-//! Enums work too.
-//! ```
-//! # use derive_quote_to_tokens::ToTokens;
-//! # use syn::Token;
-//! #[derive(ToTokens)]
-//! enum Arrow {
-//!      Left(Token![<], Token![-]),
-//!     Right(Token![-], Token![>]),
-//! }
-//! ```
+#![doc = include_str!("../README.md")]
 
 use syn_helpers::{
     derive_trait,
