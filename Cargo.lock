@@ -16,7 +16,7 @@ name = "derive-quote-to-tokens"
 version = "0.1.0"
 dependencies = [
  "pretty_assertions",
- "prettyplease",
+ "syn 1.0.109",
  "syn-helpers",
  "trybuild",
 ]
@@ -59,16 +59,6 @@ checksum = "af7cee1a6c8a5b9208b3cb1061f10c0cb689087b3d8ce85fb9d2dd7a29b6ba66"
 dependencies = [
  "diff",
  "yansi",
-]
-
-[[package]]
-name = "prettyplease"
-version = "0.1.25"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "6c8646e95016a7a6c4adea95bafa8a16baab64b583356217f2c85db4a39d9a86"
-dependencies = [
- "proc-macro2",
- "syn 1.0.109",
 ]
 
 [[package]]

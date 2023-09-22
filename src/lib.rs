@@ -40,13 +40,11 @@ fn to_tokens() -> Trait {
 #[cfg(test)]
 fn do_test(input: DeriveInput, expected: syn_helpers::proc_macro2::TokenStream) {
     use pretty_assertions::assert_eq;
-    use prettyplease::unparse;
-    use syn_helpers::syn::{parse2, File};
+    use syn_helpers::syn::{parse2, ItemImpl};
 
-    let actual = parse2::<File>(derive_trait(input, to_tokens())).expect("invalid output");
-    let expected = parse2::<File>(expected).expect("invalid input");
-
-    assert_eq!(unparse(&actual), unparse(&expected))
+    let actual = parse2::<ItemImpl>(derive_trait(input, to_tokens())).expect("invalid output");
+    let expected = parse2::<ItemImpl>(expected).expect("invalid input");
+    assert_eq!(&actual, &expected);
 }
 
 #[test]

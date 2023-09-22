@@ -13,5 +13,5 @@ syn-helpers = "0.4.5"
 
 [dev-dependencies]
 pretty_assertions = "1.4.0"
-prettyplease = "0.1.25"
+syn = { version = "1", features = ["extra-traits"] }
 trybuild = "1.0.81"
