@@ -128,3 +128,16 @@ fn test() {
         },
     );
 }
+
+#[test]
+fn readme() {
+    assert!(
+        std::process::Command::new("cargo")
+            .args(["rdme", "--check"])
+            .output()
+            .expect("couldn't run `cargo rdme`")
+            .status
+            .success(),
+        "README.md is out of date - bless the new version by running `cargo rdme`"
+    )
+}

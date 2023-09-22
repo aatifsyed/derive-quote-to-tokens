@@ -2,6 +2,10 @@
 name = "derive-quote-to-tokens"
 version = "0.1.0"
 edition = "2021"
+license = "Apache-2.0 OR MIT"
+description = "derive quote::ToTokens"
+repository = "https://github.com/aatifsyed/derive-quote-to-tokens"
+documentation = "https://docs.rs/derive-quote-to-tokens"
 
 [lib]
 proc-macro = true
